@@ -1,0 +1,277 @@
+#underscore {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#underscore:before,
+#underscore:after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #F37272;
+}
+
+#underscore:before {
+  opacity: 0;
+  -webkit-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  transform: translateY(-8px);
+  -webkit-transition: -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+}
+
+#underscore:after {
+  opacity: 0;
+  -webkit-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  transform: translateY(4px);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+}
+
+#underscore:hover:before,
+#underscore:hover:after,
+#underscore:focus:before,
+#underscore:focus:after {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+#underscore:hover:before,
+#underscore:focus:before {
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+}
+
+#underscore:hover:after,
+#underscore:focus:after {
+  -webkit-transition: -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+}
+
+/*----------------------------------------------------------------------------*/
+
+#slip:hover {
+  -webkit-transition: all ease-in-out;
+  -moz-transition: all ease-in-out;
+  -ms-transition: all ease-in-out;
+  -o-transition: all ease-in-out;
+  transition: all ease-in-out;
+  color: transparent;
+  text-shadow: 0 0 2px rgba(255,255,255,0.9), 2px 0px 0px #00FFD7, -1px 0px 0px #FF0000;
+  padding: 0 0 0 -1px;
+}
+
+/*----------------------------------------------------------------------------*/
+
+#blurshadow:hover {
+  transition: 0.3s ease-in-out;
+  text-shadow: 0px 0px 4vh white;
+}
+
+/*----------------------------------------------------------------------------*/
+
+#color:hover {
+  transition: 0.3s ease-in-out;
+  color: red;
+}
+
+#fill {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -2px;
+  color: red;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: red;
+}
+
+#fill:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  color: red;
+  -webkit-text-fill-color: red;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: red;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+}
+
+#fill:hover:before {
+  width: 100%;
+}
+
+/*----------------------------------------------------------------------------*/
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/*----------------------------------------------------------------------------*/
+
+#into {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 0;
+  transform-origin: 50% 50%;
+  border: 2px solid transparent;
+  transition: all .2s ease-in;
+  color: #fff;
+  font-size: 30px;
+  text-shadow: 0 1px #666;
+  text-decoration:none;
+}
+
+#into:hover {
+  padding: 15px;
+  font-size: 15px;
+  color: #f8b500;
+  border: 2px solid #91e842;
+  text-shadow: none;
+}
+
+/*----------------------------------------------------------------------------*/
+
+#lightning {
+ position: relative;
+ overflow: hidden;
+ display: inline-block;
+ font-weight: bold;
+ font-family: "Abril Fatface", cursive;
+ font-size: 50px;
+ color: #0bb2e6;
+ cursor: pointer;
+}
+#lightning:before {
+ content: "";
+ width: 50px;
+ position: absolute;
+ top: 0;
+ left: -50px;
+ bottom: 0;
+ z-index: 9;
+ background: -webkit-gradient(
+  linear,
+  left top,
+  right top,
+  from(rgba(255, 255, 255, 0.2)),
+  color-stop(50%, #fff),
+  to(rgba(255, 255, 255, 0.2))
+ );
+ background: linear-gradient(
+  to right,
+  rgba(255, 255, 255, 0.2) 0%,
+  #fff 50%,
+  rgba(255, 255, 255, 0.2) 100%
+ );
+}
+/*Hover*/
+#lightning:hover:before {
+ -webkit-animation: lightning-effect 2s infinite ease-in-out;
+ animation: lightning-effect 2s infinite ease-in-out;
+}
+/*Keyframes*/
+@-webkit-keyframes lightning-effect {
+ 0% {
+  left: -50px;
+  background: -webkit-gradient(
+   linear,
+   left top,
+   right top,
+   from(rgba(255, 255, 255, 0.2)),
+   color-stop(50%, #fff),
+   to(rgba(255, 255, 255, 0.2))
+  );
+  background: linear-gradient(
+   to right,
+   rgba(255, 255, 255, 0.2) 0%,
+   #fff 50%,
+   rgba(255, 255, 255, 0.2) 100%
+  );
+ }
+ 50% {
+  left: 100%;
+ }
+ to {
+  left: -50px;
+  background: 0 0;
+ }
+}
+@keyframes lightning-effect {
+ 0% {
+  left: -50px;
+  background: -webkit-gradient(
+   linear,
+   left top,
+   right top,
+   from(rgba(255, 255, 255, 0.2)),
+   color-stop(50%, #fff),
+   to(rgba(255, 255, 255, 0.2))
+  );
+  background: linear-gradient(
+   to right,
+   rgba(255, 255, 255, 0.2) 0%,
+   #fff 50%,
+   rgba(255, 255, 255, 0.2) 100%
+  );
+ }
+ 50% {
+  left: 100%;
+ }
+ to {
+  left: -50px;
+  background: 0 0;
+ }
+}
+
+
+/*----------------------------------------------------------------------------*/
+
+#line:after{
+  content:"";
+  display:block;
+  position: absolute;
+  top:42%;
+  width:0px;
+  height:36%;
+  background-color:#E59500;
+  opacity: .6;
+  z-index:-1;
+  transition: all .3s ease-in-out;
+}
+#line:hover:after{
+  width:110%;
+}
+
+/*----------------------------------------------------------------------------*/
+
+#hide {
+  background-image:linear-gradient(to right,pink,limegreen);
+  background-clip: text;
+  -webkit-background-clip:text;
+  color:rgba(0,0,0,1);
+  display: inline-block;
+  transition: color .2s ease-in-out;
+}
+#hide:hover{
+  color:rgba(0,0,0,0);
+}
+
+/*----------------------------------------------------------------------------*/
